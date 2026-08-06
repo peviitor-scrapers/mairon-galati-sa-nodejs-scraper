@@ -1,0 +1,136 @@
+{
+  "validatedAt": "2026-08-06T10:00:00.000Z",
+  "source": "ANAF",
+  "brand": "Mairon",
+  "anaf": {
+    "cui": 6581999,
+    "name": "MAIRON GALATI SA",
+    "address": "JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59",
+    "registrationNumber": "J1994003127178",
+    "phone": "0236471410",
+    "fax": "0236471411",
+    "postalCode": "800566",
+    "caenCode": "4682",
+    "iban": "",
+    "registrationState": "INREGISTRAT din data 20.12.1994",
+    "registrationDate": "1994-12-20",
+    "fiscalAuthority": "Direcţia Generală de Administrare a Marilor Contribuabili",
+    "ownershipForm": "PROPR.PRIVATA-CAPITAL PRIVAT AUTOHTON",
+    "organizationForm": "PERSOANA JURIDICA",
+    "legalForm": "SOCIETATE COMERCIALĂ PE ACŢIUNI",
+    "vatRegistered": true,
+    "vatPeriods": [
+      {
+        "start": "1994-12-19",
+        "end": null,
+        "yearStart": "",
+        "message": ""
+      }
+    ],
+    "cashBasisVat": false,
+    "cashBasisVatStart": null,
+    "cashBasisVatEnd": null,
+    "inactive": false,
+    "inactiveSince": null,
+    "reactivatedSince": null,
+    "splitVat": false,
+    "eFacturaRegistered": false,
+    "headquartersAddress": {
+      "street": "Str. Drumul de Centură",
+      "number": "59",
+      "locality": "Mun. Galaţi",
+      "county": "GALAŢI",
+      "country": "",
+      "postalCode": "800566"
+    },
+    "fiscalAddress": {
+      "street": "",
+      "number": "",
+      "locality": "",
+      "county": "",
+      "country": "",
+      "postalCode": ""
+    },
+    "administrators": [
+      {
+        "name": "MIRON COSTEL",
+        "role": "administrator"
+      },
+      {
+        "name": "MIRON CRISTINA",
+        "role": "administrator"
+      },
+      {
+        "name": "MIRON DAN",
+        "role": "administrator"
+      },
+      {
+        "name": "TANASĂ FLORENTINA",
+        "role": "reprezentant al persoanei juridice"
+      }
+    ],
+    "authorizedCaenCodes": [
+      "2420",
+      "2511",
+      "2540",
+      "2551",
+      "2553",
+      "3312",
+      "3512",
+      "3811",
+      "3821",
+      "4612",
+      "4618",
+      "4619",
+      "4631",
+      "4681",
+      "4682",
+      "4683",
+      "4687",
+      "4690",
+      "4712",
+      "4740",
+      "4941",
+      "5144",
+      "5153",
+      "5210",
+      "5221",
+      "5224",
+      "6820",
+      "7499",
+      "8292",
+      "9531"
+    ],
+    "onrcStatus": 0,
+    "onrcStatusLabel": "Funcțiune"
+  },
+  "peviitor": {
+    "id": "6581999",
+    "company": "MAIRON GALATI SA",
+    "brand": "Mairon",
+    "group": "MAIRON",
+    "status": "activ",
+    "website": [
+      "https://www.mairon.ro"
+    ],
+    "career": [
+      "https://www.mairon.ro/companie/cariere/"
+    ],
+    "lastScraped": "2026-08-06",
+    "scraperFile": "mairon-galati-sa-nodejs-scraper.md",
+    "_version_": 0,
+    "_root_": "6581999"
+  },
+  "summary": {
+    "company": "MAIRON GALATI SA",
+    "cif": "6581999",
+    "active": true,
+    "inactiveSince": null,
+    "reactivatedSince": null,
+    "address": "JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59",
+    "registrationNumber": "J1994003127178",
+    "caenCode": "4682",
+    "vatRegistered": true,
+    "eFacturaRegistered": false
+  }
+}

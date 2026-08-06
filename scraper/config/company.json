@@ -1,0 +1,10 @@
+{
+  "id": "6581999",
+  "company": "MAIRON GALATI SA",
+  "brand": "Mairon",
+  "status": "activ",
+  "location": ["Galați"],
+  "website": ["https://www.mairon.ro"],
+  "career": ["https://www.mairon.ro/companie/cariere/"],
+  "scraperFile": "https://github.com/peviitor-scrapers/mairon-galati-sa-nodejs-scraper/actions/workflows/job-seeker-ro-spider.yml"
+}
