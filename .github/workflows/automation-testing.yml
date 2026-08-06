@@ -151,6 +151,7 @@ jobs:
         run: |
           npm run test:unit
           sed -i 's|<title>Test Report</title>|<title>Pre-scrape: Unit Tests — MAIRON GALATI SA</title>|;s|<h1 id="title">Test Report</h1>|<h1 id="title">Pre-scrape: Unit Tests — MAIRON GALATI SA</h1>|' test-report.html
+          mkdir -p docs/test-results
           cp test-report.html docs/test-results/pre-scrape-unit.html || true
           
       - name: Upload Unit Test Results
@@ -164,6 +165,7 @@ jobs:
         run: |
           npm run test:integration
           sed -i 's|<title>Test Report</title>|<title>Pre-scrape: Integration Tests — MAIRON GALATI SA</title>|;s|<h1 id="title">Test Report</h1>|<h1 id="title">Pre-scrape: Integration Tests — MAIRON GALATI SA</h1>|' test-report.html
+          mkdir -p docs/test-results
           cp test-report.html docs/test-results/pre-scrape-integration.html || true
           
       - name: Upload Integration Test Results
@@ -177,6 +179,7 @@ jobs:
         run: |
           npm run test:e2e
           sed -i 's|<title>Test Report</title>|<title>Post-scrape: E2E Tests — MAIRON GALATI SA</title>|;s|<h1 id="title">Test Report</h1>|<h1 id="title">Post-scrape: E2E Tests — MAIRON GALATI SA</h1>|' test-report.html
+          mkdir -p docs/test-results
           cp test-report.html docs/test-results/post-scrape.html || true
           
       - name: Upload E2E Test Results
@@ -190,6 +193,7 @@ jobs:
         run: |
           npm run test:consistency
           sed -i 's|<title>Test Report</title>|<title>Post-scrape: Consistency Tests — MAIRON GALATI SA</title>|;s|<h1 id="title">Test Report</h1>|<h1 id="title">Post-scrape: Consistency Tests — MAIRON GALATI SA</h1>|' test-report.html
+          mkdir -p docs/test-results
           cp test-report.html docs/test-results/post-scrape-consistency.html || true
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
