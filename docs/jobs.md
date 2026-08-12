@@ -10,11 +10,11 @@
 | Location | Galați |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-08-11 |
+| Last Scraped | 2026-08-12 |
 
 ## Current Job Listings (2)
 
-_Generated: 2026-08-11T07:02:05.156Z_
+_Generated: 2026-08-12T07:20:01.153Z_
 
 ### Agent vanzari birou - Cluj
 
