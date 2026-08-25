@@ -10,8 +10,8 @@
 | Location | Galați |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-08-24 |
+| Last Scraped | 2026-08-25 |
 
 ## Current Job Listings (0)
 
-_Generated: 2026-08-24T06:52:12.250Z_
+_Generated: 2026-08-25T06:40:47.514Z_
