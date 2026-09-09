@@ -7,11 +7,11 @@
 | CIF | 6581999 |
 | Brand | Mairon |
 | Status | activ |
-| Location | JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59 |
+| Location | Galați |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-09-08 |
+| Last Scraped | 2026-09-09 |
 
 ## Current Job Listings (0)
 
-_Generated: 2026-09-08T10:32:33.612Z_
+_Generated: 2026-09-09T10:44:01.392Z_
