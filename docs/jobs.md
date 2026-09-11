@@ -10,8 +10,8 @@
 | Location | JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59 |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-09-10 |
+| Last Scraped | 2026-09-11 |
 
 ## Current Job Listings (0)
 
-_Generated: 2026-09-10T10:34:08.378Z_
+_Generated: 2026-09-11T10:34:18.481Z_
