@@ -59,30 +59,75 @@ async function searchANOFM(cif) {
   return jobs;
 }
 
+const EJOBS_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
+let browserSession = null;
+
+function looksBlocked(html) {
+  return !html || /Attention Required! \| Cloudflare|Just a moment\.\.\./i.test(html) || !/<h2 class="job-card-content-middle__title">/.test(html);
+}
+
+/**
+ * eJobs sits behind Cloudflare, which can answer plain HTTP clients with a block page.
+ * A real Chromium usually gets through, so it is used as a fallback.
+ */
+async function fetchEJobsPageViaBrowser(url) {
+  if (!browserSession) {
+    const { chromium } = await import("playwright");
+    const browser = await chromium.launch({ headless: true });
+    const context = await browser.newContext({ userAgent: EJOBS_UA, locale: "ro-RO" });
+    browserSession = { browser, context };
+  }
+  const page = await browserSession.context.newPage();
+  try {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page
+      .waitForSelector("h2.job-card-content-middle__title", { timeout: 25000 })
+      .catch(() => {});
+    return await page.content();
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
+async function closeBrowser() {
+  if (!browserSession) return;
+  const { browser } = browserSession;
+  browserSession = null;
+  await browser.close().catch(() => {});
+}
+
 async function fetchEJobsPage() {
   const url = `${JOB_BASE}/company/${COMPANY_SLUG}/${COMPANY_ID}`;
 
-  const res = await fetch(url, {
-    timeout: TIMEOUT,
-    headers: {
-      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
-      "Accept": "text/html,application/xhtml+xml",
-      "Accept-Language": "ro-RO,ro;q=0.9,en;q=0.8"
-    }
-  });
-
-  if (!res.ok) {
-    throw new Error(`eJobs error ${res.status} for company page`);
+  try {
+    const res = await fetch(url, {
+      timeout: TIMEOUT,
+      headers: {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml",
+        "Accept-Language": "ro-RO,ro;q=0.9,en;q=0.8"
+      }
+    });
+    const body = await res.text();
+    if (res.ok && !looksBlocked(body)) return body;
+    console.log(`  eJobs plain request blocked (HTTP ${res.status}) - retrying with a real browser`);
+  } catch (err) {
+    console.log(`  eJobs plain request failed (${err.message}) - retrying with a real browser`);
   }
 
-  return await res.text();
+  const html = await fetchEJobsPageViaBrowser(url);
+  if (looksBlocked(html)) {
+    throw new Error("eJobs company page blocked (Cloudflare) even in a real browser");
+  }
+  return html;
 }
 
 function parseEJobsJobs(html) {
   const jobs = [];
   const seenUrls = new Set();
 
-  const titlePattern = /<h2 class="job-card-content-middle__title"><a href="([^"]+)" class=""><span>([^<]+)<\/span><\/a><\/h2>/g;
+  const titlePattern = /<h2 class="job-card-content-middle__title"><a href="([^"]+)"[^>]*><span>([^<]+)<\/span><\/a><\/h2>/g;
 
   const matches = [...html.matchAll(titlePattern)];
   for (let i = 0; i < matches.length; i++) {
@@ -319,14 +364,16 @@ async function main() {
 
     console.log("\n=== DONE ===");
     console.log("Scraper completed successfully!");
+    await closeBrowser();
 
   } catch (err) {
     console.error("Scraper failed:", err);
+    await closeBrowser();
     process.exit(1);
   }
 }
 
-export { parseEJobsJobs, mapToJobModel, transformJobsForSOLR };
+export { parseEJobsJobs, mapToJobModel, transformJobsForSOLR, fetchEJobsPage, closeBrowser };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();

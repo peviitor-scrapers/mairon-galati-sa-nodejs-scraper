@@ -188,3 +188,16 @@ describe('index.js Component Tests', () => {
     });
   });
 });
+
+describe('parseEJobsJobs - browser-rendered markup', () => {
+  const RENDERED = `<h2 class="job-card-content-middle__title"><a href="/user/locuri-de-munca/agent-servicii-client-galati/99247612" class="" data-testid="b2c-job-card-title-link"><span>Agent servicii client - Galati</span></a></h2><h3 class="job-card-content-middle__info job-card-content-middle__info--darker"><a href="/company/mairon-galati-s-a/19073">MAIRON GALATI S.A.</a></h3><div class="job-card-content-middle__info">Galati (Galati) </div>`;
+
+  it('parses cards that carry extra attributes and relative hrefs', async () => {
+    const index = await import('../../scraper/index.js');
+    const result = index.parseEJobsJobs(RENDERED + RENDERED);
+    expect(result).toHaveLength(1);
+    expect(result[0].title).toBe('Agent servicii client - Galati');
+    expect(result[0].url).toBe('https://www.ejobs.ro/user/locuri-de-munca/agent-servicii-client-galati/99247612');
+    expect(result[0].location).toEqual(['Galati']);
+  });
+});
