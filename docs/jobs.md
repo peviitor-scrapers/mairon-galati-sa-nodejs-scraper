@@ -10,8 +10,14 @@
 | Location | JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59 |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-10-04 |
+| Last Scraped | 2026-10-17 |
 
-## Current Job Listings (0)
+## Current Job Listings (1)
 
-_Generated: 2026-10-04T11:45:26.964Z_
+_Generated: 2026-10-17T10:08:05.145Z_
+
+### Agent servicii client - Galati
+
+- **URL:** [https://www.ejobs.ro/user/locuri-de-munca/agent-servicii-client-galati/99247612](https://www.ejobs.ro/user/locuri-de-munca/agent-servicii-client-galati/99247612)
+- **Location:** Galați
+- **Status:** scraped
