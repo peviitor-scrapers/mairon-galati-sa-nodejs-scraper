@@ -10,11 +10,11 @@
 | Location | JUD. GALAŢI, MUN. GALAŢI, STR. DRUMUL DE CENTURA, NR.59 |
 | Website | [https://www.mairon.ro](https://www.mairon.ro) |
 | Careers | [https://www.mairon.ro/companie/cariere/](https://www.mairon.ro/companie/cariere/) |
-| Last Scraped | 2026-11-02 |
+| Last Scraped | 2026-11-03 |
 
 ## Current Job Listings (1)
 
-_Generated: 2026-11-02T14:43:35.758Z_
+_Generated: 2026-11-03T13:36:24.387Z_
 
 ### Agent servicii client - Galati
 
